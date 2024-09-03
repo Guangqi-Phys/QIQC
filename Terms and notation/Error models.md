@@ -1,3 +1,12 @@
+---
+aliases:
+  - Noise model
+status: true
+created: Monday, August 26th 2024, 3:09:56 pm
+modified: Tuesday, September 3rd 2024, 11:47:06 am
+tags:
+  - noise-model
+---
 
 Generally, there are three different level of noises. Code capacity noise, phenomenological noise, and circuit level noise. In the following sections, we describe each element individually and with precision. (Also see [[2024-08-21]])
 

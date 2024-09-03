@@ -1,3 +1,10 @@
+---
+aliases: []
+status: true
+created: Tuesday, August 27th 2024, 5:24:40 pm
+modified: Tuesday, September 3rd 2024, 11:49:16 am
+tags: []
+---
 
 See [[Quintavalle-2020-Single-shot]].
 
@@ -8,4 +15,5 @@ See [[Quintavalle-2020-Single-shot]].
 > The $t$-Shadow means to repair the syndrome such that make sure that the error corresponding to the syndrome after the repairation has weight less than $t$.
 
 
-The Shadow decoder, a theoretical two-stage decoder, is [[Single-shot]] on codes with good [[Confinement]] against adversarial noise. The basic idea is that when a code has conﬁnement, the weight of the residual error after one decoding cycle is bounded by a function of the weight of the syndrome error. (Just like the [[small-set flip decoder]] for quantum expander code)
+The Shadow decoder, a theoretical two-stage decoder, is [[Single-shot]] on codes with good [[Confinement]] against adversarial noise. The basic idea is that when a code has conﬁnement, the weight of the residual error after one decoding cycle is bounded by a function of the weight of the syndrome error. (Just like the [[Small-set flip decoder]] for quantum expander code).
+

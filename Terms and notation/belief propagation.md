@@ -1,10 +1,8 @@
 ---
 status: false
-aliases:
-  - sum-product
-  - BP
+aliases: [BP, sum-product]
 created: Tuesday, August 27th 2024, 4:28:30 pm
-modified: Wednesday, August 28th 2024, 4:22:46 pm
+modified: Tuesday, September 3rd 2024, 11:38:19 am
 tags:
   - algorithm
 ---
