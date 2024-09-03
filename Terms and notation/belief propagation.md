@@ -18,6 +18,7 @@ The belief propagation (BP) algorithm (also known as sum-product algorithm) has 
 
 ---
 
+
 > [!theorem] Lemma (Gallager)
 > Consider a sequence of $m$ independent random variables $\mathbf{A}=\left[A_1, A_2, \ldots, A_m\right]$, where $P\left(A_k=1\right)=p_k$. Then
 > $$P(\mathbf{A} \text { has even parity })=\frac{1}{2}+\frac{1}{2} \prod_{k=1}^m\left(1-2 p_k\right)$$
