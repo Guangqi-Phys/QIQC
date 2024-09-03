@@ -26,3 +26,6 @@ Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used i
     - **Wireless Communication**: LDPC codes are used in standards such as 5G, Wi-Fi (802.11n and beyond), and DVB-S2 for satellite communication.
     - **Data Storage**: LDPC codes are employed in hard drives, SSDs, and other storage technologies to enhance data integrity.
     - **Digital Television and Satellite**: The high efficiency of LDPC codes makes them ideal for broadcasting high-definition television signals and satellite communication systems.
+
+- [6] 7. [[Log-Likelihood Ratios|LLRs]] and LDPC codes
+
