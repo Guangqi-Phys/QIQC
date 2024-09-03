@@ -93,11 +93,10 @@ In many decoding problems, we want to maximize a posteriori LLRs $P(X=\hat{x} \m
 If we assume that $X$ is uniformly distributed, i.e., $P(X=0)=P(X=1)=\frac{1}{2}$, then we get by applying Bayes' theorem
 $$
 \begin{aligned}
-L(X \mid Y=y) & =\ln \left(\frac{P(X=0 \mid y)}{P(X=1 \mid y)}\right)=\ln \left(\frac{p(y \mid X=0) \cdot P(X=0)}{p(y \mid X=1) \cdot P(X=1)}\right) \\
-& =\ln \left(\frac{p(y \mid X=0)}{p(y \mid X=1)}\right)+\ln \left(\frac{P(X=0)}{P(X=1)}\right) \\
+L(X \mid Y=y) & =\ln \left(\frac{P(X=0 \mid y)}{P(X=1 \mid y)}\right)=\ln \left(\frac{P(y \mid X=0) \cdot P(X=0)}{P(y \mid X=1) \cdot P(X=1)}\right) \\
+& =\ln \left(\frac{P(y \mid X=0)}{P(y \mid X=1)}\right)+\ln \left(\frac{P(X=0)}{P(X=1)}\right) \\
 & =L(Y=y \mid X)+L(X)
 \end{aligned}
 $$
-
 If $P(X=0)=P(X=1)=\frac{1}{2}$, then $L(X)=0$ and the a posteriori LLR corresponds to the channel-transition LLR, i.e.,
 $$L(X \mid Y=y) \stackrel{P(X=0)=\frac{1}{2}}{=} L(Y=y \mid X)$$
