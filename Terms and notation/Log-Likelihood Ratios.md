@@ -62,3 +62,24 @@ f(x) = log((1-x)/x)
 > $$L_c:=\frac{2}{\sigma_n^2}=4 \frac{E_{\mathrm{s}}}{N_0}$$
 > In the case of the BI-AWGN channel, the LLRs $L(Y \mid X)$ are simply obtained by multiplying the received value $y$ with a constant $L_c$ that depends on the channel parameter $E_{\mathrm{s}} / N_0$ (or $\sigma_n^2$, equivalently). This makes LLRs especially attractive for practical systems, as the LLRs are readily obtained with a single multiplication (avoiding $\ln$ and $\exp$ function evaluations).
 
+- [0] Properties of LLRs: Inverse Relation
+Consider the LLR $L(X)$ associated with a binary random variable $X$. Then we have
+$$L(X)=\ln \left(\frac{P(X=0)}{P(X=1)}\right)=\ln \left(\frac{P(X=0)}{1-P(X=0)}\right)$$
+or equivalently
+$$e^{L(X)}=\frac{P(X=0)}{1-P(X=0)}$$
+Solving this expression for $P(X=0)$ leads to
+$$P(X=0)=\frac{e^{L(X)}}{1+e^{L(X)}}=\frac{1}{1+e^{-L(X)}}$$
+Similarly
+$$P(X=1)=\frac{1}{1+e^{L(X)}}$$
+- [1] Properties of LLRs: Expectation
+We can calculate the expectation of $\ddot{X}$
+$$
+\begin{aligned}
+\mathbb{E}\{\ddot{X}\} & =+1 \cdot P(\ddot{X}=+1)+(-1) \cdot P(\ddot{X}=-1)=\underbrace{P(X=0)}_{1-P(X=1)}-P(X=1) \\
+& =1-2 P(X=1)
+\end{aligned}
+$$
+We have, for the binary random variable $X$,
+$$1-2 P(X=1)=1-\frac{2}{1+e^{L(X)}}=\frac{1+e^{L(X)}-2}{1+e^{L(X)}}=\frac{e^{L(X)}-1}{e^{L(X)}+1}$$
+and with $\tanh (\tau):=\frac{e^{2 \tau}-1}{e^{2 \tau}+1}$, we get
+$$\mathbb{E}\{\ddot{X}\}=1-2 P(X=1)=1-2 P(\ddot{X}=-1)=\tanh \left(\frac{L(X)}{2}\right).$$
