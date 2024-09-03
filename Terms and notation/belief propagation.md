@@ -17,7 +17,7 @@ The belief propagation (BP) algorithm (also known as sum-product algorithm) has 
 
 
 ---
-
+- [0] 1. Gallagers' lemma
 
 > [!theorem] Lemma (Gallager)
 > Consider a sequence of $m$ independent random variables $\mathbf{A}=\left[A_1, A_2, \ldots, A_m\right]$, where $P\left(A_k=1\right)=p_k$. Then
@@ -38,6 +38,23 @@ $$M_S(i \pi)=\prod_{k=1}^m\left(p_k e^{i \pi}+\left(1-p_k\right)\right)=\prod_{k
 Thus, the expression for $P(S \text{ is even})$ is:
 $$P(S\text{ is even})=\frac{1}{2}\left(1+M_S(i \pi)\right)=\frac{1}{2}\left(1+\prod_{k=1}^m\left(1-2 p_k\right)\right).$$
 ---
+- [1] 2. [[Log-Likelihood Ratios|LLRs]] and single parity check codes
+
+We now consider the $\mathcal{C}_{\text {SPC }}(n, n-1)$ single-parity-check code and transmission of length-$n$ codewords $x$ over a memoryless channel whose output is $y$.
+
+Remember that the bits $x_i$ in each codeword $\boldsymbol{x}^{[m]}$ have a single constraint: There must be an even number of " 1 "s on $x^{[m]}$.
+
+Without loss of generality, we formulate the [[MAP decoding]] rule for bit $x_1$
+$$\hat{x}_1=\arg \max _{b \in\{0,1\}} P\left(x_1=b \mid \boldsymbol{y} \text {, even number of " } 1 \text { "s in } \boldsymbol{x}\right)$$
+and we have
+$$
+\begin{aligned}
+P\left(x_1=0 \mid \boldsymbol{y}, \text { even no. of " } 1 \text { "s in } \boldsymbol{x}\right) & =P\left(x_2, \ldots, x_n \text { has even no. " } 1 \text { "s } \mid \boldsymbol{y}\right) \\
+& =\frac{1}{2}\left(1+\prod_{\ell=2}^n\left(1-2 P\left(x_{\ell}=1 \mid y_{\ell}\right)\right)\right)
+\end{aligned}
+$$
+
+
 
 
 

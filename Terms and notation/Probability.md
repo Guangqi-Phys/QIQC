@@ -9,7 +9,7 @@ tags:
 ---
 
 1. The **prior probability** is the probability of an event before new data is collected. It reflects the initial belief about the event, based on existing knowledge or assumptions before any actual testing or observation is done.
-2. The **posterior probability** is the revised probability of an event occurring after taking into account new evidence. It is derived from the prior probability and the likelihood of the new evidence given the prior. In Bayesian statistics, this updating of beliefs is formalized through Bayes' theorem.
+2. The **posterior probability** is the revised probability of an event occurring after taking into account new evidence. It is derived from the prior probability and the likelihood of the new evidence given the prior. In Bayesian statistics, this updating of beliefs is formalized through Bayes' theorem. ^353427
 
 > [!theorem] Bayes' Theorem
 > Bayes' theorem is typically stated as: $P(A\mid B)=\frac{P(B\mid A) \times P(A)}{P(B)}$ where:
