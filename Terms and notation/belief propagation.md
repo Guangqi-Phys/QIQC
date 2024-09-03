@@ -1,12 +1,15 @@
 ---
 status: false
-aliases: [BP, sum-product]
+aliases:
+  - BP
+  - sum-product
 created: Tuesday, August 27th 2024, 4:28:30 pm
 modified: Tuesday, September 3rd 2024, 11:38:19 am
 tags:
   - algorithm
+  - statistics
 ---
----
+
 
 The belief propagation (BP) algorithm (also known as sum-product algorithm) has been shown to be eﬀective at decoding classical LDPC codes. It has a running time that is linear in the block length of the code.
 
@@ -15,7 +18,7 @@ The belief propagation (BP) algorithm (also known as sum-product algorithm) has 
 
 ---
 
-> [!theorem] 
+> [!theorem] Lemma (Gallager)
 > Consider a sequence of $m$ independent random variables $\mathbf{A}=\left[A_1, A_2, \ldots, A_m\right]$, where $P\left(A_k=1\right)=p_k$. Then
 > $$P(\mathbf{A} \text { has even parity })=\frac{1}{2}+\frac{1}{2} \prod_{k=1}^m\left(1-2 p_k\right)$$
 > and

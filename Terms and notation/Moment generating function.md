@@ -6,7 +6,6 @@ modified: Wednesday, August 28th 2024, 4:03:12 pm
 tags:
   - statistics
 ---
----
 
 The moment generating function (MGF) is a statistical tool that summarizes all the moments (expected values of powers) of a random variable into a single function. For a variable $X$, the MGF can be used to compute $E(X), E(X^2), E(X^{3),}$, and so on.
 

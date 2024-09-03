@@ -2,7 +2,7 @@
 aliases: [LDPC]
 status: 
 created: Tuesday, September 3rd 2024, 3:59:02 pm
-modified: Tuesday, September 3rd 2024, 4:52:39 pm
+modified: Tuesday, September 3rd 2024, 5:11:22 pm
 tags: []
 ---
 Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used in communication systems to detect and correct errors in transmitted data. LDPC codes are widely recognized for their ability to approach the theoretical limits of channel capacity, as defined by Claude Shannon's information theory.
@@ -52,8 +52,9 @@ $$
 & L\left(\xi_3\right)=L\left(y_i \mid X_i\right)+L\left(\chi_1\right)+L\left(\chi_2\right)+L\left(\chi_4\right)
 \end{aligned}
 $$
-i.e., we exclude the edge under consideration from the computation (extrinsic message)
-The best decision for the bit $\hat{x}_i$ is obtained from the a posteriori LLR
+i.e., we exclude the edge under consideration from the computation (extrinsic message).
+
+The best decision for the bit $\hat{x}_i$ is obtained from the a posteriori LLR (see [[Repetition codes#^b4d844]])
 $$L\left(X_i \mid \boldsymbol{y}\right)=L\left(y_i \mid X_i\right)+\sum_{i=1}^4 L\left(\chi_i\right)$$
 
 

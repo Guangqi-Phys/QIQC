@@ -1,8 +1,8 @@
 ---
-aliases: 
+aliases: []
 status: true
 created: Tuesday, September 3rd 2024, 3:00:09 pm
-modified: Tuesday, September 3rd 2024, 3:00:18 pm
+modified: Tuesday, September 3rd 2024, 5:17:36 pm
 tags:
   - code
 ---
@@ -29,9 +29,11 @@ We now consider the $\mathcal{C}_{\text {rep }}(n, 1)$ repetition code, where a 
 We compute the a posteriori LLR
 $$L(X \mid \boldsymbol{y})=L(\boldsymbol{y} \mid X)=\ln \left(\frac{p(\boldsymbol{y} \mid X=0)}{p(\boldsymbol{y} \mid X=1)}\right)$$
 which can be expressed by assuming the property that the channel is memoryless
-$$L(X \mid \boldsymbol{y})=\ln \left(\frac{\prod_{i=1}^n p\left(y_i \mid X=0\right)}{\prod_{i=1}^n p\left(y_i \mid X=1\right)}\right)=\sum_{i=1}^n \ln \left(\frac{p\left(y_i \mid X=0\right)}{p\left(y_i \mid X=1\right)}\right)$$
+$$L(X \mid \boldsymbol{y})=\ln \left(\frac{\prod_{i=1}^n p\left(y_i \mid X=0\right)}{\prod_{i=1}^n p\left(y_i \mid X=1\right)}\right)=\sum_{i=1}^n \ln \left(\frac{p\left(y_i \mid X=0\right)}{p\left(y_i \mid X=1\right)}\right).$$
+
 Thus, we finally get for the $\mathcal{C}_{\text {rep }}(n, 1)$ repetition code assuming uniform priors that
 $$L(X \mid \boldsymbol{y})=\sum_{i=1}^n L\left(y_i \mid X\right)$$
-i.e., the a posteriori LLR is the sum of the channel-transition LLRs, which can be easily computed.
+i.e., the a posteriori LLR is the sum of the channel-transition LLRs, which can be easily computed. ^b4d844
+
 The MAP decoder for the repetition code thus takes the LLRs for each channel output and adds them. The MAP decision is $\hat{x}=0$ if $L(X \mid \boldsymbol{y}) \geq 0$ and $\hat{x}=1$ otherwise, i.e.,
-$$\hat{\ddot{x}}=\operatorname{sign}(L(X \mid \boldsymbol{y}))=\operatorname{sign}\left(\sum_{i=1}^n L\left(y_i \mid X\right)\right)$$
+$$\hat{\ddot{x}}=\operatorname{sign}(L(X \mid \boldsymbol{y}))=\operatorname{sign}\left(\sum_{i=1}^n L\left(y_i \mid X\right)\right)$$ 
