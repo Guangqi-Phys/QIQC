@@ -1,8 +1,8 @@
 ---
-aliases: []
+aliases: [LDPC]
 status: 
 created: Tuesday, September 3rd 2024, 3:59:02 pm
-modified: Tuesday, September 3rd 2024, 3:59:08 pm
+modified: Tuesday, September 3rd 2024, 4:52:39 pm
 tags: []
 ---
 Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used in communication systems to detect and correct errors in transmitted data. LDPC codes are widely recognized for their ability to approach the theoretical limits of channel capacity, as defined by Claude Shannon's information theory.
@@ -28,4 +28,33 @@ Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used i
     - **Digital Television and Satellite**: The high efficiency of LDPC codes makes them ideal for broadcasting high-definition television signals and satellite communication systems.
 
 - [6] 7. [[Log-Likelihood Ratios|LLRs]] and LDPC codes
+
+The variable nodes of degree $d_{\mathrm{v}}$ of an LDPC code can be considered as $\left(d_{\mathrm{v}}+1,1\right)$ repetition codes where 1 bit is tranmitted over the channel and the other bits are "transmitted over the graph". As in "soldier counting" we send a message once we have received $d_{\mathrm{v}}-1$ messages
+Variable Nodes, Example $d_{\mathrm{v}}=4$ :
+
+```mehrmaid
+graph TB
+    A["$L(y_i \mid X_i)$"] --> B(( ))
+    C["$L(\chi_1)$"] --> B
+    D["$L(\chi_2)$"] --> B
+    E["$L(\chi_3)$"] --> B
+    B --> F["$L(\xi_4)$"]
+    style B fill:#ccc,stroke:#333,stroke-width:2px
+    style F stroke:#00f,stroke-width:2px,color:#00f
+
+```
+
+Similarly, we get for the other edges
+$$
+\begin{aligned}
+& L\left(\xi_1\right)=L\left(y_i \mid X_i\right)+L\left(\chi_2\right)+L\left(\chi_3\right)+L\left(\chi_4\right) \\
+& L\left(\xi_2\right)=L\left(y_i \mid X_i\right)+L\left(\chi_1\right)+L\left(\chi_3\right)+L\left(\chi_4\right) \\
+& L\left(\xi_3\right)=L\left(y_i \mid X_i\right)+L\left(\chi_1\right)+L\left(\chi_2\right)+L\left(\chi_4\right)
+\end{aligned}
+$$
+i.e., we exclude the edge under consideration from the computation (extrinsic message)
+The best decision for the bit $\hat{x}_i$ is obtained from the a posteriori LLR
+$$L\left(X_i \mid \boldsymbol{y}\right)=L\left(y_i \mid X_i\right)+\sum_{i=1}^4 L\left(\chi_i\right)$$
+
+
 
