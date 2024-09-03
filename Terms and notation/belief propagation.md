@@ -8,7 +8,6 @@ tags:
   - statistics
 ---
 
-
 The belief propagation (BP) algorithm (also known as sum-product algorithm) has been shown to be eﬀective at decoding classical LDPC codes. It has a running time that is linear in the block length of the code.
 
 ️️BP is a message passing algorithm, in which messages are passed along the edges of a Tanner graph.
@@ -37,11 +36,11 @@ Thus, the expression for $P(S \text{ is even})$ is:
 $$P(S\text{ is even})=\frac{1}{2}\left(1+M_S(i \pi)\right)=\frac{1}{2}\left(1+\prod_{k=1}^m\left(1-2 p_k\right)\right).$$
 ---
 
-- [1] 2.  [[Log-Likelihood Ratios|LLRs]] and repetition codes (also in [[Repetition codes#^79414d]])
+- [1] 2.  [[Log-Likelihood Ratios|LLRs]] and repetition codes (copy of [[Repetition codes#^79414d]])
 
 We now consider the $\mathcal{C}_{\text {rep }}(n, 1)$ repetition code, where a bit $x \in\{0,1\}$ is transmitted and the vector $\boldsymbol{y}=\left(y_1, y_2, \ldots, y_n\right)$ is received. We assume that $P(X=0)=P(X=1)=\frac{1}{2}$.
 
-We compute the a posteriori LLR
+We compute the a posteriori LLR (see [[Log-Likelihood Ratios#^158e94]])
 $$L(X \mid \boldsymbol{y})=L(\boldsymbol{y} \mid X)=\ln \left(\frac{p(\boldsymbol{y} \mid X=0)}{p(\boldsymbol{y} \mid X=1)}\right)$$
 which can be expressed by assuming the property that the channel is memoryless
 $$L(X \mid \boldsymbol{y})=\ln \left(\frac{\prod_{i=1}^n p\left(y_i \mid X=0\right)}{\prod_{i=1}^n p\left(y_i \mid X=1\right)}\right)=\sum_{i=1}^n \ln \left(\frac{p\left(y_i \mid X=0\right)}{p\left(y_i \mid X=1\right)}\right).$$
@@ -50,14 +49,13 @@ Thus, we finally get for the $\mathcal{C}_{\text {rep }}(n, 1)$ repetition code 
 $$L(X \mid \boldsymbol{y})=\sum_{i=1}^n L\left(y_i \mid X\right)$$
 i.e., the a posteriori LLR is the sum of the channel-transition LLRs, which can be easily computed.  ^f825f8
 
-The MAP decoder for the repetition code thus takes the LLRs for each channel output and adds them. The MAP decision is $\hat{x}=0$ if $L(X \mid \boldsymbol{y}) \geq 0$ and $\hat{x}=1$ otherwise, i.e.,
+The [[MAP decoding|MAP]] decoder for the repetition code thus takes the LLRs for each channel output and adds them. The MAP decision is $\hat{x}=0$ if $L(X \mid \boldsymbol{y}) \geq 0$ and $\hat{x}=1$ otherwise, i.e.,
 $$\hat{\ddot{x}}=\operatorname{sign}(L(X \mid \boldsymbol{y}))=\operatorname{sign}\left(\sum_{i=1}^n L\left(y_i \mid X\right)\right)$$
 ---
 
- - [2] 3. [[Log-Likelihood Ratios|LLRs]] and LDPC codes (also in [[LDPC codes#^8cb15c]])
+ - [2] 3. [[Log-Likelihood Ratios|LLRs]] and repetition codes - LDPC context (copy of [[LDPC codes#^8cb15c]])
 
-The variable nodes of degree $d_{\mathrm{v}}$ of an LDPC code can be considered as $\left(d_{\mathrm{v}}+1,1\right)$ repetition codes where 1 bit is tranmitted over the channel and the other bits are "transmitted over the graph". As in "soldier counting" we send a message once we have received $d_{\mathrm{v}}-1$ messages
-Variable Nodes, Example $d_{\mathrm{v}}=4$ :
+The variable nodes of degree $d_{\mathrm{v}}$ of an LDPC code can be considered as $\left(d_{\mathrm{v}}+1,1\right)$ repetition codes where 1 bit is tranmitted over the channel and the other bits are "transmitted over the graph" (**from variable node to check nodes**). As in "soldier counting" we send a message once we have received $d_{\mathrm{v}}-1$ messages variable Nodes, Example $d_{\mathrm{v}}=4$ :
 
 ```mehrmaid
 graph TB
@@ -70,7 +68,7 @@ graph TB
     style F stroke:#00f,stroke-width:2px,color:#00f
 
 ```
-
+$$L\left(\xi_4\right)=L\left(y_i \mid X_i\right)+L\left(\chi_1\right)+L\left(\chi_2\right)+L\left(\chi_3\right)$$
 Similarly, we get for the other edges
 $$
 \begin{aligned}
@@ -86,7 +84,7 @@ $$L\left(X_i \mid \boldsymbol{y}\right)=L\left(y_i \mid X_i\right)+\sum_{i=1}^4 
 
 ---
 
-- [3] 4. [[Log-Likelihood Ratios|LLRs]] and single parity check (SPC) codes
+- [3] 4. [[Log-Likelihood Ratios|LLRs]] and [[Single parity check codes]] (SPC codes)
 
 We now consider the $\mathcal{C}_{\text {SPC }}(n, n-1)$ single-parity-check code and transmission of length-$n$ codewords $x$ over a memoryless channel whose output is $y$.
 
@@ -110,7 +108,7 @@ $$
 \end{aligned}
 $$
 
-Rearranging the equation from the previous slide gives
+Rearranging the equation
 $$
 \begin{aligned}
 P\left(x_1=0 \mid \boldsymbol{y}, \mathrm{SPC}\right) & =\frac{1}{2}\left(1+\prod_{\ell=2}^n\left(1-2 P\left(x_{\ell}=1 \mid y_{\ell}\right)\right)\right) \\
@@ -127,7 +125,6 @@ Applying Equation [[Log-Likelihood Ratios#^c8571d]], we get
 $$
 1-2 P\left(x_1=1 \mid \boldsymbol{y}, \mathrm{SPC}\right) = \tanh \left(\frac{L\left(X_1 \mid \boldsymbol{Y}, \mathrm{SPC}\right)}{2}\right)=\prod_{\ell=2}^n \tanh \left(\frac{L\left(X_{\ell} \mid Y_{\ell}\right)}{2}\right)
 $$
-
 or, equivalently
 
 $$

@@ -2,7 +2,7 @@
 aliases: [LLRs]
 status: true
 created: Tuesday, September 3rd 2024, 11:19:13 am
-modified: Tuesday, September 3rd 2024, 6:49:18 pm
+modified: Tuesday, September 3rd 2024, 7:30:33 pm
 tags:
   - error-model
   - statistics
@@ -11,16 +11,9 @@ tags:
 > [!definition] (Log-Likelihood Ratio)
 > Consider a binary (or equivalently bipolar) random variable $X$ ($\ddot{X}$ is the [[Binary Phase Shift Keying|BPSK]] of $X$). We define the log-likelihood ratio (LLR) $L(X)$ as
 > $$L(X):=\ln \left(\frac{P(X=0)}{P(X=1)}\right)=\ln \left(\frac{P(\ddot{X}=+1)}{P(\ddot{X}=-1)}\right).$$
-> Similary, we define the channel-transition LLR (where $X$ is the binary channel input and $Y$ the channel output)
+> Similary, we define the **channel-transition LLR** (where $X$ is the binary channel input and $Y$ the channel output)
 > $$L(Y \mid X):=\ln \left(\frac{p(Y \mid X=0)}{p(Y \mid X=1)}\right)=\ln \left(\frac{p(Y \mid \ddot{X}=+1)}{p(Y \mid \ddot{X}=-1)}\right).$$
 
-
-Log-Likelihood Ratios (LLRs) are preferred over normal ratios for binary random variables (and in general) for several important reasons:
-
-1.  **Addition instead of multiplication:** In many algorithms, especially in decoding and estimation, working with log-likelihood ratios simplifies calculations. Multiplying probabilities (as would be necessary with normal ratios) can lead to very small numbers, increasing the risk of numerical underflow. By taking the logarithm, multiplication becomes addition, making computations more stable and efficient.
-2. **Symmetry in probabilities**:The LLR transforms the probability ratio into a value that can range from $-\infty$ to $\infty$, with zero representing equal likelihoods for both binary states. This symmetric range is useful in decision-making processes, such as comparing the LLR to a threshold to determine the most likely state.
-3. **Alignment with decision theory:** LLRs naturally align with Bayesian decision-making and Maximum A Posteriori (MAP) estimation. In these frameworks, decisions are often based on comparing LLRs against a threshold, which is derived from prior probabilities and costs. This makes LLRs a natural fit for these types of statistical inference problems.
-4. **Handling of small probabilities:** LLRs can handle very small or very large likelihoods without leading to extreme values, which can occur when working directly with probability ratios. This is particularly important in communication systems and machine learning algorithms, where extremely unlikely events may need to be represented without causing numerical issues.
 
 > [!note] Advantages of LLRs (more)
 > - Log-Likelihood Ratios (LLRs) are commonly used due to their advantages when it comes to hardware implementation. 
@@ -30,8 +23,13 @@ Log-Likelihood Ratios (LLRs) are preferred over normal ratios for binary random 
 > - Costly multiplications of probabilities become additions of LLRs.
 > - Most practical implementations of nowadays coding schemes use LLRs
 
+**Log-Likelihood Ratios (LLRs) are preferred over normal ratios for binary random variables (and in general) for several important reasons**:
+    1.  **Addition instead of multiplication:** In many algorithms, especially in decoding and estimation, working with log-likelihood ratios simplifies calculations. Multiplying probabilities (as would be necessary with normal ratios) can lead to very small numbers, increasing the risk of numerical underflow. By taking the logarithm, multiplication becomes addition, making computations more stable and efficient.
+    2. **Symmetry in probabilities**:The LLR transforms the probability ratio into a value that can range from $-\infty$ to $\infty$, with zero representing equal likelihoods for both binary states. This symmetric range is useful in decision-making processes, such as comparing the LLR to a threshold to determine the most likely state.
+    3. **Alignment with decision theory:** LLRs naturally align with Bayesian decision-making and Maximum A Posteriori (MAP) estimation. In these frameworks, decisions are often based on comparing LLRs against a threshold, which is derived from prior probabilities and costs. This makes LLRs a natural fit for these types of statistical inference problems.
+    4. **Handling of small probabilities:** LLRs can handle very small or very large likelihoods without leading to extreme values, which can occur when working directly with probability ratios. This is particularly important in communication systems and machine learning algorithms, where extremely unlikely events may need to be represented without causing numerical issues.
 
-> [!example] Example: [[Binary Symmetric Channel|BSC]]
+> [!example] Example 1: [[Binary Symmetric Channel|BSC]]
 > Consider the BSC with error probability $\delta$. We have
 > $$P(Y=0 \mid X=0)=1-\delta, P(Y=1 \mid X=1)=1-\delta.$$ 
 > $$P(Y=0 \mid X=1)=\delta, P(Y=1 \mid X=0)=\delta.$$
@@ -56,14 +54,14 @@ f(x) = log((1-x)/x)
 ````
 
 
-> [!example] Example: [[BI-AWGN]] channel
+> [!example] Example 2: [[BI-AWGN]] channel
 > In this channel
 > $$L(Y=y \mid X)=\frac{2}{\sigma_n^2} \cdot y=L_c \cdot y$$\
 > with
 > $$L_c:=\frac{2}{\sigma_n^2}=4 \frac{E_{\mathrm{s}}}{N_0}$$
 > In the case of the BI-AWGN channel, the LLRs $L(Y \mid X)$ are simply obtained by multiplying the received value $y$ with a constant $L_c$ that depends on the channel parameter $E_{\mathrm{s}} / N_0$ (or $\sigma_n^2$, equivalently). This makes LLRs especially attractive for practical systems, as the LLRs are readily obtained with a single multiplication (avoiding $\ln$ and $\exp$ function evaluations).
 
-- [0] Properties of LLRs: Inverse Relation
+- [0] 1. Properties of LLRs: Inverse Relation
 Consider the LLR $L(X)$ associated with a binary random variable $X$. Then we have
 $$L(X)=\ln \left(\frac{P(X=0)}{P(X=1)}\right)=\ln \left(\frac{P(X=0)}{1-P(X=0)}\right)$$
 or equivalently
@@ -73,7 +71,7 @@ $$P(X=0)=\frac{e^{L(X)}}{1+e^{L(X)}}=\frac{1}{1+e^{-L(X)}}$$
 Similarly
 $$P(X=1)=\frac{1}{1+e^{L(X)}}$$
 
-- [1] Properties of LLRs: Expectation
+- [1] 2. Properties of LLRs: Expectation
 We can calculate the expectation of $\ddot{X}$
 $$
 \begin{aligned}
@@ -87,7 +85,7 @@ and with $\tanh (\tau):=\frac{e^{2 \tau}-1}{e^{2 \tau}+1}$, we get
 
 $$\mathbb{E}\{\ddot{X}\}=1-2 P(X=1)=1-2 P(\ddot{X}=-1)=\tanh \left(\frac{L(X)}{2}\right).$$ ^c8571d
 
-- [2] A Posteriori LLRs
+- [2] 3. A Posteriori LLRs
 In many decoding problems, we want to maximize a posteriori LLRs $P(X=\hat{x} \mid Y)$
 
 > [!definition] Definition (A Posteriori Log-Likelihood Ratios)
@@ -103,4 +101,4 @@ L(X \mid Y=y) & =\ln \left(\frac{P(X=0 \mid y)}{P(X=1 \mid y)}\right)=\ln \left(
 \end{aligned}
 $$
 If $P(X=0)=P(X=1)=\frac{1}{2}$, then $L(X)=0$ and the a posteriori LLR corresponds to the channel-transition LLR, i.e.,
-$$L(X \mid Y=y) \stackrel{P(X=0)=\frac{1}{2}}{=} L(Y=y \mid X)$$
+$$L(X \mid Y=y) \stackrel{P(X=0)=\frac{1}{2}}{=} L(Y=y \mid X)$$ ^158e94
