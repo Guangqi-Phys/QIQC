@@ -1,10 +1,11 @@
 ---
 aliases: [LLRs]
-status: 
+status: true
 created: Tuesday, September 3rd 2024, 11:19:13 am
-modified: Tuesday, September 3rd 2024, 1:08:59 pm
+modified: Tuesday, September 3rd 2024, 6:49:18 pm
 tags:
-  - cLDPC
+  - error-model
+  - statistics
 ---
 
 > [!definition] (Log-Likelihood Ratio)
@@ -71,6 +72,7 @@ Solving this expression for $P(X=0)$ leads to
 $$P(X=0)=\frac{e^{L(X)}}{1+e^{L(X)}}=\frac{1}{1+e^{-L(X)}}$$
 Similarly
 $$P(X=1)=\frac{1}{1+e^{L(X)}}$$
+
 - [1] Properties of LLRs: Expectation
 We can calculate the expectation of $\ddot{X}$
 $$
@@ -82,7 +84,9 @@ $$
 We have, for the binary random variable $X$,
 $$1-2 P(X=1)=1-\frac{2}{1+e^{L(X)}}=\frac{1+e^{L(X)}-2}{1+e^{L(X)}}=\frac{e^{L(X)}-1}{e^{L(X)}+1}$$
 and with $\tanh (\tau):=\frac{e^{2 \tau}-1}{e^{2 \tau}+1}$, we get
-$$\mathbb{E}\{\ddot{X}\}=1-2 P(X=1)=1-2 P(\ddot{X}=-1)=\tanh \left(\frac{L(X)}{2}\right).$$
+
+$$\mathbb{E}\{\ddot{X}\}=1-2 P(X=1)=1-2 P(\ddot{X}=-1)=\tanh \left(\frac{L(X)}{2}\right).$$ ^c8571d
+
 - [2] A Posteriori LLRs
 In many decoding problems, we want to maximize a posteriori LLRs $P(X=\hat{x} \mid Y)$
 

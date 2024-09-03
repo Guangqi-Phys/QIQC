@@ -22,7 +22,7 @@ Repetition coding is one of the simplest forms of error correction coding used i
 - [3] 4. Error Correction Capability:
 - Repetition codes are capable of correcting up to $\left\lfloor\frac{n-1}{2}\right\rfloor$ bit errors within each codeword of length $n$.
 
-- [4] [[Log-Likelihood Ratios|LLRs]] and repetition codes
+- [4] 5. [[Log-Likelihood Ratios|LLRs]] and repetition codes ^79414d
 
 We now consider the $\mathcal{C}_{\text {rep }}(n, 1)$ repetition code, where a bit $x \in\{0,1\}$ is transmitted and the vector $\boldsymbol{y}=\left(y_1, y_2, \ldots, y_n\right)$ is received. We assume that $P(X=0)=P(X=1)=\frac{1}{2}$.
 

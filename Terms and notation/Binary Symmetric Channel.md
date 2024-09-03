@@ -1,9 +1,11 @@
 ---
-aliases: [BSC]
+aliases:
+  - BSC
 status: true
 created: Tuesday, September 3rd 2024, 11:53:02 am
 modified: Tuesday, September 3rd 2024, 3:02:20 pm
-tags: []
+tags:
+  - error-model
 ---
 The Binary Symmetric Channel (BSC) is one of the simplest models in information theory and digital communication, it is a channel that transmits binary symbols, where each bit transmitted can either be received correctly or flipped to the opposite value due to noise. The channel is characterized by a fixed probability of error, denoted by , which is the probability that a transmitted bit is received incorrectly. Mathematically, if $X$ is the input bit and $Y$ is the output bit, then:
 $$P(Y=X)=1-p, \quad P(Y \neq X)=p$$

@@ -2,8 +2,9 @@
 aliases: []
 status: true
 created: Tuesday, August 27th 2024, 5:24:40 pm
-modified: Tuesday, September 3rd 2024, 11:49:16 am
-tags: []
+modified: Tuesday, September 3rd 2024, 5:58:42 pm
+tags:
+  - decoder
 ---
 
 See [[Quintavalle-2020-Single-shot]].

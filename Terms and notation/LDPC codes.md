@@ -1,9 +1,11 @@
 ---
 aliases: [LDPC]
-status: 
+status: true
 created: Tuesday, September 3rd 2024, 3:59:02 pm
-modified: Tuesday, September 3rd 2024, 5:11:22 pm
-tags: []
+modified: Tuesday, September 3rd 2024, 7:19:44 pm
+tags:
+  - code
+  - graph
 ---
 Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used in communication systems to detect and correct errors in transmitted data. LDPC codes are widely recognized for their ability to approach the theoretical limits of channel capacity, as defined by Claude Shannon's information theory.
 
@@ -23,11 +25,11 @@ Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used i
     LDPC codes are flexible and can be designed with various code rates and lengths, making them suitable for a wide range of applications, from short block lengths in storage devices to very long block lengths in data transmission.
 
 - [5] 6. Applications of LDPC Codes:
-    - **Wireless Communication**: LDPC codes are used in standards such as 5G, Wi-Fi (802.11n and beyond), and DVB-S2 for satellite communication.
-    - **Data Storage**: LDPC codes are employed in hard drives, SSDs, and other storage technologies to enhance data integrity.
-    - **Digital Television and Satellite**: The high efficiency of LDPC codes makes them ideal for broadcasting high-definition television signals and satellite communication systems.
+    **Wireless Communication**: LDPC codes are used in standards such as 5G, Wi-Fi (802.11n and beyond), and DVB-S2 for satellite communication.
+    **Data Storage**: LDPC codes are employed in hard drives, SSDs, and other storage technologies to enhance data integrity.
+    **Digital Television and Satellite**: The high efficiency of LDPC codes makes them ideal for broadcasting high-definition television signals and satellite communication systems.
 
-- [6] 7. [[Log-Likelihood Ratios|LLRs]] and LDPC codes
+- [6] 7. [[Log-Likelihood Ratios|LLRs]] and LDPC codes ^8cb15c
 
 The variable nodes of degree $d_{\mathrm{v}}$ of an LDPC code can be considered as $\left(d_{\mathrm{v}}+1,1\right)$ repetition codes where 1 bit is tranmitted over the channel and the other bits are "transmitted over the graph". As in "soldier counting" we send a message once we have received $d_{\mathrm{v}}-1$ messages
 Variable Nodes, Example $d_{\mathrm{v}}=4$ :
