@@ -1,11 +1,12 @@
 ---
-aliases: [LDPC]
+aliases:
+  - LDPC
 status: true
 created: Tuesday, September 3rd 2024, 3:59:02 pm
 modified: Tuesday, September 3rd 2024, 7:31:28 pm
 tags:
-  - code
   - graph
+  - classical-code
 ---
 Low-Density Parity-Check (LDPC) codes are a type of error-correcting code used in communication systems to detect and correct errors in transmitted data. LDPC codes are widely recognized for their ability to approach the theoretical limits of channel capacity, as defined by Claude Shannon's information theory.
 

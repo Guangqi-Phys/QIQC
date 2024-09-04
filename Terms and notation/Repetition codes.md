@@ -1,10 +1,10 @@
 ---
-aliases: []
+aliases: 
 status: true
 created: Tuesday, September 3rd 2024, 3:00:09 pm
 modified: Tuesday, September 3rd 2024, 7:28:02 pm
 tags:
-  - code
+  - classical-code
 ---
 Repetition coding is one of the simplest forms of error correction coding used in digital communication systems. Its primary goal is to improve the reliability of data transmission over noisy channels by adding redundancy to the original message.
 

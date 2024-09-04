@@ -1,10 +1,12 @@
 ---
-status: false
+status: true
 aliases: [BP, sum-product]
 created: Tuesday, August 27th 2024, 4:28:30 pm
-modified: Wednesday, September 4th 2024, 11:26:33 am
+modified: Wednesday, September 4th 2024, 3:34:12 pm
 tags:
+  - AI-generated
   - algorithm
+  - LDPC
   - statistics
 ---
 
@@ -237,13 +239,26 @@ $$\hat{x}_i=\arg \max _{x_i \in\{0,1\}} P\left(X_i=x_i \mid \boldsymbol{y}\right
 
 **Waterfall phenomenon**: The "waterfall region" in the Bit Error Rate (BER) versus $E_b / N_0$ graph is a characteristic feature of certain advanced error-correcting codes, such as Low-Density Parity-Check (LDPC) codes and Turbo codes. This region is named for its steep, almost vertical drop in the BER as the signal-tonoise ratio $E_b / N_0$ increases. Initially, when the $E_b / N_0$ is low, the noise in the channel is high relative to the signal energy, leading to a high BER because the decoder cannot effectively distinguish between the correct data and errors. As the $E_b / N_0$ increases (meaning the signal quality improves relative to the noise), the decoder starts to gain enough information from the redundancy in the code to more effectively correct the errors. ^138c47
 
+---
 
+- [7] 8. Simplification of Sum-product algorithm #AI-generated
 
+**A. Jacobian Approach (or Log-Sum-Exp Approximation)** See [[Log-Sum-Exp Approximation]]
 
+The Jacobian approach is a method used to efficiently implement the sum-product algorithm in the log domain.
 
+In the log domain, the sum-product algorithm involves the computation of the "log-sum-exp" operation, which is a form of summing probabilities in the log domain. This operation is computationally expensive because it involves calculating exponentials.
 
+The Jacobian logarithm is an approximation used to simplify the log-sum-exp operation by approximating the log of the sum of two exponentials:
+$$\log \left(e^x+e^y\right) \approx \max (x, y)+f(|x-y|)$$
+where $f(|x-y|)$ is a correction term that accounts for the difference between $x$ and $y$. The Jacobian method thus retains some accuracy while simplifying the computation.
 
+**B. Min-Sum Algorithm (MSA) Overview** (See [[Min-Sum decoding]].)
 
+The min-sum algorithm (MSA) is a simplification of the sum-product algorithm. Instead of computing the full log-sum-exp operation (or using the Jacobian approximation), the min-sum algorithm approximates the sum-product algorithm by taking only the maximum (or minimum in some domains) and ignoring the correction term:
+$$\log \left(e^x+e^y\right) \approx \max (x, y)$$
+
+This is a much simpler operation because it avoids the need for complex calculations or corrections. However, the min-sum algorithm is less accurate than the sum-product algorithm because it discards the correction term that accounts for the difference between the two values being compared.
 
 
 

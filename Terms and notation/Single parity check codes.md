@@ -1,10 +1,12 @@
 ---
-aliases: [SPC]
+aliases:
+  - SPC
 status: true
 created: Tuesday, September 3rd 2024, 11:22:48 pm
 modified: Tuesday, September 3rd 2024, 11:24:52 pm
 tags:
-  - code
+  - classical-code
+  - AI-generated
 ---
 The SPC is a linear block code with a single parity check digit(added in the end to make the codeword).
 
