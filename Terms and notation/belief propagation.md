@@ -2,7 +2,7 @@
 status: false
 aliases: [BP, sum-product]
 created: Tuesday, August 27th 2024, 4:28:30 pm
-modified: Wednesday, September 4th 2024, 11:26:02 am
+modified: Wednesday, September 4th 2024, 11:26:33 am
 tags:
   - algorithm
   - statistics
@@ -233,7 +233,7 @@ Now we are ready to show the sum-product decoding algorithm of LDPC code!
 The sum-product algorithm minimizes the bit-wise a posteriori probability
 $$\hat{x}_i=\arg \max _{x_i \in\{0,1\}} P\left(X_i=x_i \mid \boldsymbol{y}\right).$$Under the assumption that the code bits $x_i$ are independent and the messages that are sent are independent, which is equivalent to saying that<mark style="background: #D2B3FFA6;"> the graph has no cycles</mark>. The assumptions are not met in practice, yet the decoder is extremely good and powerful and simple to implement. More details are given in the extra material section.
 
-**Error Floor phenomenon**: An error floor is said to occur, if above a certain channel quality (e.g., $E_{\mathrm{b}} / N_0$ or $\delta$ ), the bit error error rate does not decrease rapidly anymore, but decreases with a smaller slope only. In the previous example, for $E_{\mathrm{b}} / N_0>4.5 \mathrm{~dB}$, the BER decreases by 100 per decibel only. This effects may limit the use of LDPC codes where very low BERs are targeted. Error floor is mostly due to combinations of cycles (so-called trapping sets) that cannot be recovered by the decoder. Active research field to construct LDPC codes that have very low error floor.
+**Error Floor phenomenon**: An error floor is said to occur, if above a certain channel quality (e.g., $E_{\mathrm{b}} / N_0$ or $\delta$ ), the bit error error rate does not decrease rapidly anymore, but decreases with a smaller slope only. In the previous example, for $E_{\mathrm{b}} / N_0>4.5 \mathrm{~dB}$, the BER decreases by 100 per decibel only. This effects may limit the use of LDPC codes where very low BERs are targeted. Error floor is mostly <mark style="background: #D2B3FFA6;">due to combinations of cycles</mark> (so-called trapping sets) that cannot be recovered by the decoder. Active research field to construct LDPC codes that have very low error floor.
 
 **Waterfall phenomenon**: The "waterfall region" in the Bit Error Rate (BER) versus $E_b / N_0$ graph is a characteristic feature of certain advanced error-correcting codes, such as Low-Density Parity-Check (LDPC) codes and Turbo codes. This region is named for its steep, almost vertical drop in the BER as the signal-tonoise ratio $E_b / N_0$ increases. Initially, when the $E_b / N_0$ is low, the noise in the channel is high relative to the signal energy, leading to a high BER because the decoder cannot effectively distinguish between the correct data and errors. As the $E_b / N_0$ increases (meaning the signal quality improves relative to the noise), the decoder starts to gain enough information from the redundancy in the code to more effectively correct the errors. ^138c47
 
